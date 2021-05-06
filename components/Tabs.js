@@ -1,17 +1,23 @@
 import React from 'react'
 import Link from 'next/link'
+import styled from 'styled-components'
+import Button from './Button'
 
 const Tabs = () => {
   return (
-    <div>
-      <Link href='/'>
+    <StyledTabs>
+      <Button href='/'>
         home
-      </Link>
-      <Link href='/notifications'>
-        notification
-      </Link>
-    </div>
+      </Button>
+      <Button href='/jobs'>
+        job
+      </Button>
+    </StyledTabs>
   )
 }
 
 export default Tabs
+
+const StyledTabs = styled.div`
+  margin-bottom: 20px;
+`
