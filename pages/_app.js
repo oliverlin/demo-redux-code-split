@@ -4,21 +4,22 @@ import { useEffect, useState } from 'react'
 import { HYDRATE } from '../constants'
 
 function MyApp({ Component, pageProps }) {
+  const preloadedState = pageProps
   // Initial server-side and client side initial render
   const [store] = useState(() => {
-    return initStore({ type: HYDRATE, state: pageProps })
+    return initStore(preloadedState)
   })
 
   // Handle server-side props passed in when switching pages
   useEffect(() => {
-    const initialState = Object.keys(pageProps)
+    const initialState = Object.keys(preloadedState)
     if (initialState.length) {
       store.dispatch({
         type: HYDRATE,
-        state: pageProps
+        state: preloadedState
       })
     }
-  }, [pageProps])
+  }, [preloadedState])
 
   return (
     <Provider store={store}>
