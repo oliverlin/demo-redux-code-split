@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "analyze": "ANALYZE=1 next build"
   },
   "dependencies": {
     "next": "10.2.0",
@@ -15,6 +16,7 @@
     "styled-components": "^5.3.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.12.0"
+    "babel-plugin-styled-components": "^1.12.0",
+    "webpack-bundle-analyzer": "^4.4.1"
   }
 }
