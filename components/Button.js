@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Button = ({ children, href, ...extraProps }) => {
   return (
     href ? (
-      <Link href={href} >
+      <Link prefetch={false} href={href} >
         <StyledButton {...extraProps}>
           {children}
         </StyledButton>
